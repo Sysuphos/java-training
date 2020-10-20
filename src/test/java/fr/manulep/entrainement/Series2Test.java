@@ -155,17 +155,17 @@ class Series2Test {
 	@Test
 	public void swapFirstandLastElement() {
 
-		List<Integer> numberList = Arrays.asList(2, 3, 2, 0, 4, 11, 6, 8);
+		List<Integer> numbersList = Arrays.asList(2, 3, 2, 0, 4, 11, 6, 8);
 		List<Integer> expectedList = Arrays.asList(8, 3, 2, 0, 4, 11, 6, 2);
-		assertIterableEquals(expectedList, Series2.swapFirstandLastElement(numberList));
+		assertIterableEquals(expectedList, Series2.swapFirstandLastElement(numbersList));
 
-		numberList = Arrays.asList(2, 3, 2, 0, 4, 11, 6, 2);
+		numbersList = Arrays.asList(2, 3, 2, 0, 4, 11, 6, 2);
 		expectedList = Arrays.asList(2, 3, 2, 0, 4, 11, 6, 2);
-		assertIterableEquals(expectedList, Series2.swapFirstandLastElement(numberList));
+		assertIterableEquals(expectedList, Series2.swapFirstandLastElement(numbersList));
 
-		numberList = Arrays.asList(2);
+		numbersList = Arrays.asList(2);
 		expectedList = Arrays.asList(2);
-		assertIterableEquals(expectedList, Series2.swapFirstandLastElement(numberList));
+		assertIterableEquals(expectedList, Series2.swapFirstandLastElement(numbersList));
 	}
 
 	/**
@@ -206,16 +206,35 @@ class Series2Test {
 	 */
 	@Test
 	public void findAnagrams() {
+		List<String> actual = Series2.findAnagrams("madl");
+		assertAll("find anagrams of madl", () -> assertEquals(24, actual.size()),
+				() -> assertTrue(actual.contains("adlm")), () -> assertTrue(actual.contains("adml")),
+				() -> assertTrue(actual.contains("aldm")), () -> assertTrue(actual.contains("almd")),
+				() -> assertTrue(actual.contains("amdl")), () -> assertTrue(actual.contains("amld")),
+				() -> assertTrue(actual.contains("dalm")), () -> assertTrue(actual.contains("daml")),
+				() -> assertTrue(actual.contains("dlam")), () -> assertTrue(actual.contains("dlma")),
+				() -> assertTrue(actual.contains("dmal")), () -> assertTrue(actual.contains("dmla")),
+				() -> assertTrue(actual.contains("ladm")), () -> assertTrue(actual.contains("lamd")),
+				() -> assertTrue(actual.contains("ldam")), () -> assertTrue(actual.contains("ldma")),
+				() -> assertTrue(actual.contains("lmad")), () -> assertTrue(actual.contains("lmda")),
+				() -> assertTrue(actual.contains("madl")), () -> assertTrue(actual.contains("mald")),
+				() -> assertTrue(actual.contains("mdal")), () -> assertTrue(actual.contains("mdla")),
+				() -> assertTrue(actual.contains("mlad")), () -> assertTrue(actual.contains("mlda")));
 
-		List<String> actual = Series2.findAnagrams("mad");
-		assertAll("find anagrams of mad", () -> assertEquals(6, actual.size()),
-				() -> assertTrue(actual.contains("adm")), () -> assertTrue(actual.contains("mad")),
-				() -> assertTrue(actual.contains("amd")), () -> assertTrue(actual.contains("dma")),
-				() -> assertTrue(actual.contains("dam")), () -> assertTrue(actual.contains("mda")));
+		List<String> actual2 = Series2.findAnagrams("mad");
+		assertAll("find anagrams of mad", () -> assertEquals(6, actual2.size()),
+				() -> assertTrue(actual2.contains("dma")), () -> assertTrue(actual2.contains("dam")),
+				() -> assertTrue(actual2.contains("adm")), () -> assertTrue(actual2.contains("amd")),
+				() -> assertTrue(actual2.contains("mda")), () -> assertTrue(actual2.contains("mad")));
 
-		List<String> actual2 = Series2.findAnagrams("ma");
-		assertAll("find anagrams of mad", () -> assertEquals(2, actual2.size()),
-				() -> assertTrue(actual2.contains("am")), () -> assertTrue(actual2.contains("ma")));
+		List<String> actual4 = Series2.findAnagrams("ma");
+		assertAll("find anagrams of ma", () -> assertEquals(2, actual4.size()),
+				() -> assertTrue(actual4.contains("am")), () -> assertTrue(actual4.contains("ma")));
+
+				List<String> actual3 = Series2.findAnagrams("mll");
+		assertAll("find anagrams of mall", () -> assertEquals(3, actual3.size()),
+				() -> assertTrue(actual3.contains("llm")), () -> assertTrue(actual3.contains("lml")),
+				() -> assertTrue(actual3.contains("mll"))); 
 
 	}
 
@@ -260,7 +279,7 @@ class Series2Test {
 	@Test
 	public void formatDateNicely() {
 		LocalDate date = LocalDate.of(2019, 11, 26);
-		assertEquals("26/11/2019", Series2.dateToString(date, "dd/mm/yyyy"));
+		assertEquals("26/11/2019", Series2.dateToString(date, "dd/MM/yyyy"));
 	}
 
 	/**
