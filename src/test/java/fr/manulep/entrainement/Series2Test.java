@@ -157,15 +157,15 @@ class Series2Test {
 
 		List<Integer> numberList = Arrays.asList(2, 3, 2, 0, 4, 11, 6, 8);
 		List<Integer> expectedList = Arrays.asList(8, 3, 2, 0, 4, 11, 6, 2);
-		assertIterableEquals(expectedList, Series2.reverseOrder(numberList));
+		assertIterableEquals(expectedList, Series2.swapFirstandLastElement(numberList));
 
 		numberList = Arrays.asList(2, 3, 2, 0, 4, 11, 6, 2);
 		expectedList = Arrays.asList(2, 3, 2, 0, 4, 11, 6, 2);
-		assertIterableEquals(expectedList, Series2.reverseOrder(numberList));
+		assertIterableEquals(expectedList, Series2.swapFirstandLastElement(numberList));
 
 		numberList = Arrays.asList(2);
 		expectedList = Arrays.asList(2);
-		assertIterableEquals(expectedList, Series2.reverseOrder(numberList));
+		assertIterableEquals(expectedList, Series2.swapFirstandLastElement(numberList));
 	}
 
 	/**
@@ -259,7 +259,7 @@ class Series2Test {
 	 */
 	@Test
 	public void formatDateNicely() {
-		LocalDate date = LocalDate.of(2019, 26, 11);
+		LocalDate date = LocalDate.of(2019, 11, 26);
 		assertEquals("26/11/2019", Series2.dateToString(date, "dd/mm/yyyy"));
 	}
 
