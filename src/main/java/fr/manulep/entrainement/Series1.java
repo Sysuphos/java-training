@@ -1,8 +1,5 @@
 package fr.manulep.entrainement;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Series1 {
 	
 	private Series1() {
@@ -12,12 +9,7 @@ public class Series1 {
 
 	public static String helloWorld(String name) {
 		//1
-		String message;
-		if ((name != null) && (name != ""))
-			message = "Hello " + name;
-		else
-			message = "Hello World";
-		return message;
+		return null;
 	}
 	
 
@@ -43,58 +35,11 @@ public class Series1 {
 	
 	public static String[] selectElementsStartingWithA2(String[] array) {
 		//6
-		String[] mots;
-
-		//compter le nombre de mots commencant par a
-		int nb = 0;
-		for (String elem : array) {
-			//System.out.println(elem);
-			if (elem.charAt(0) == 'a') {
-				nb = nb + 1;  //nb++
-				//System.out.println("oui");
-			}
-		}
-		mots = new String[nb];
-
-		// remplir le tableau
-		int x = 0;
-		for (int i = 0; i < array.length; i++) {
-			String elem = array[i];
-			System.out.println(elem);
-			System.out.println("i="+i);
-			System.out.println("x="+x);
-			if (elem.charAt(0) == 'a') {
-				mots[x] = elem;
-				x++;
-			}
-			
-		}
-
-		return mots;
+		return null;
 	}
 	
 	public static String[] selectElementsStartingWithA(String[] array) {
-		String[] retour;
-		System.out.println(Arrays.toString(retour));
-		ArrayList<String> stock = new ArrayList<String>();
-
-		for (String mot : array) {
-			if (mot.charAt(0) == 'a') {
-				stock.add(mot);
-			}
-		}
-
-		// int x = 0;
-		// retour = new String[stock.size()];
-		// for (String mot : stock) {
-		// 	retour[x] = mot;
-		// 	x++;
-		// }
-
-		retour = stock.toArray(new String[stock.size()]);
-
-		System.out.println(Arrays.toString(retour));
-		return retour;
+		return null;
 	}
 
 	public static String[] selectElementsStartingWithVowel(String[]array) {
