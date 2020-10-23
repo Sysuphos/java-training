@@ -1,6 +1,5 @@
 package fr.manulep.entrainement;
 
-
 public class Series1 {
 	
 	private Series1() {
@@ -10,7 +9,6 @@ public class Series1 {
 
 	public static String helloWorld(String name) {
 		//1
-
 		return null;
 	}
 	
@@ -37,12 +35,10 @@ public class Series1 {
 	
 	public static String[] selectElementsStartingWithA2(String[] array) {
 		//6
-		
 		return null;
 	}
 	
 	public static String[] selectElementsStartingWithA(String[] array) {
-		
 		return null;
 	}
 
